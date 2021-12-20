@@ -2,7 +2,34 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 ## Getting Started
 
-First, run the development server:
+A collection of hooks & components to add telemetry events declaratively.
+
+`SpanProvider`: declares a new span; all child components will inherit its context. Can be nested.
+`useSpanInitializer`: automatically fires off event, with duration & timestamp, when component unmounts, or a new name is passed in as a prop. Provides `endSpan`, `startSpan` functions for more fine-tuned control. Returns `sendEvent` function to dispatch events annotated with its fields & context. Does not propogate its context to child components.
+
+`useTraceContext`: Useful when you want to send events associated with the parent span with trace context from anywhere in the app
+
+Example:
+
+```jsx
+function SendEventButton() {
+  const { sendEvent } = useTraceContext();
+
+  return (
+    <Button
+      onClick={() => {
+        sendEvent({ name: "clcked-button" });
+      }}
+    >
+      Send Event
+    </Button>
+  );
+}
+```
+
+TODO: add instructions on adding honeycomb api key
+
+To experiment, run the development server:
 
 ```bash
 npm run dev
@@ -26,6 +53,8 @@ To learn more about Next.js, take a look at the following resources:
 - [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+
+TODO: add honeycomb docs
 
 ## Deploy on Vercel
 
