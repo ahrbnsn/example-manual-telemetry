@@ -5,15 +5,15 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 A collection of hooks & components to add telemetry events declaratively.
 
 `SpanProvider`: declares a new span; all child components will inherit its context. Can be nested.
-`useSpanInitializer`: automatically fires off event, with duration & timestamp, when component unmounts, or a new name is passed in as a prop. Provides `endSpan`, `startSpan` functions for more fine-tuned control. Returns `sendEvent` function to dispatch events annotated with its fields & context. Does not propogate its context to child components.
+`useCreateSpan`: automatically fires off event, with duration & timestamp, when component unmounts or `endSpan` is called. Provides `endSpan`, `startSpan` functions for more fine-tuned control. Returns `sendEvent` function to dispatch events annotated with its fields & context. Does not propogate its context to child components.
 
-`useTraceContext`: Useful when you want to send events associated with the parent span with trace context from anywhere in the app
+`useSpanContext`: Useful when you want to send events associated with the parent span with trace context from anywhere in the app
 
 Example:
 
 ```jsx
 function SendEventButton() {
-  const { sendEvent } = useTraceContext();
+  const { sendEvent } = useSpanContext();
 
   return (
     <Button

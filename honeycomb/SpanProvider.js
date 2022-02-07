@@ -1,60 +1,38 @@
-import {
-  createContext,
-  useContext,
-  useRef,
-  useState,
-  useMemo,
-  useReducer,
-} from "react";
+import { useContext, useRef, useState, useMemo, useReducer } from "react";
 import { v4 as uuid } from "uuid";
-import { useSpanInitializer } from "./useSpanInitializer";
-import { useEventFields } from "./useEventFields";
-import { TraceContext } from "./useTraceContext";
+import { SpanContext } from "./useSpanContext";
+import { SpanFieldsDispatch } from "./useSpanFieldsDispatch";
+import { useCreateSpan } from "./useCreateSpan";
 
-export const SpanFieldsDispatchContext = createContext({
-  addFields: () => {},
-  removeField: () => {},
-  setFields: () => {},
-});
+/* SpanProvider creates a parent span; all children spans & events triggered
+ * from child components will use its id as their parent id, and include
+ * all extra fields set on the SpanProvider in their payloads
+ *
+ * Arguments:
+ * `name`:          the name for the span. Often the name of the component
+ *                  or section
+ * `initialFields`: any fields that should be included in every span & event
+ *                  sent by child components */
 
-export const SpanProvider = ({
-  name,
-  children,
-  traceId: initialTraceId,
-  initialFields = {},
-}) => {
-  const { spanId, traceId, extraFieldsFromParent, setSpanFields } =
-    useSpanInitializer(name, { initialTraceId });
+export const SpanProvider = ({ name, children, initialFields = {} }) => {
+  const { fields, spanId, traceId, extraContextFields, dispatch } =
+    useCreateSpan({ name, initialFields, startSpanOnMount: true });
 
-  const { fields, addFields, removeField, setFields } = useEventFields({
-    initialFields,
-    setSpanFields,
-  });
-
-  const traceContext = {
+  const spanContext = {
     parentId: spanId,
-    traceId,
-    extraFields: {
-      ...extraFieldsFromParent,
+    traceId: traceId,
+    contextFields: {
+      ...extraContextFields,
       ...fields,
     },
   };
 
-  const fieldDispatch = useMemo(
-    () => ({
-      addFields,
-      removeField,
-      setFields,
-    }),
-    [addFields, removeField, setFields]
-  );
-
   return (
-    <TraceContext.Provider value={traceContext}>
-      <SpanFieldsDispatchContext.Provider value={fieldDispatch}>
+    <SpanContext.Provider value={spanContext}>
+      <SpanFieldsDispatch.Provider value={dispatch}>
         {children}
-      </SpanFieldsDispatchContext.Provider>
-    </TraceContext.Provider>
+      </SpanFieldsDispatch.Provider>
+    </SpanContext.Provider>
   );
 };
 

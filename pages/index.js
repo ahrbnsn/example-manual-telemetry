@@ -1,33 +1,20 @@
 import { useState } from "react";
-import { SpanProvider } from "honeycomb/SpanProvider";
-import { v4 as uuid } from "uuid";
 
-import { SendEventButton } from "components/SendEventButton";
-import { ExampleSpan } from "components/ExampleSpan";
+import EventWatcher from "components/EventWatcher";
+import Quiz from "components/Quiz";
 
 export default function Home({ children }) {
-  const [show, setShow] = useState(true);
-
-  const toggle = () => {
-    setShow((prevState) => !prevState);
-  };
+  const [events, setEvents] = useState([]);
+  const [showEventWatcher, setShowEvents] = useState(true);
 
   return (
-    <>
-      {show && (
-        <SpanProvider
-          name="homePage"
-          traceId={uuid()}
-          initialFields={{ hi: "hello!" }}
-        >
-          <SendEventButton />
-          <SpanProvider name="childSpan" initialFields={{ nested: true }}>
-            <SendEventButton>Child event</SendEventButton>
-            <ExampleSpan />
-          </SpanProvider>
-        </SpanProvider>
+    <main className={showEventWatcher ? "two-column" : "single-column"}>
+      <section className="main-panel">
+        <Quiz />
+      </section>
+      {showEventWatcher && (
+        <EventWatcher events={events} setEvents={setEvents} />
       )}
-      <button onClick={toggle}>show/hide</button>
-    </>
+    </main>
   );
 }

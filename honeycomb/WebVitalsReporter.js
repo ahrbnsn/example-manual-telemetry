@@ -1,8 +1,8 @@
 import { getLCP, getFID, getCLS, getTTFB, getFCP } from "web-vitals";
-import { useTraceContext } from "./useTraceContext";
+import { useSpanContext } from "./useSpanContext";
 
-function WebVitalsReporter({ fireEvent }) {
-  const { sendEvent } = useTraceContext();
+function WebVitalsReporter() {
+  const { sendEvent } = useSpanContext();
 
   useEffect(() => {
     getCLS((metrics) => sendEvent(metrics));

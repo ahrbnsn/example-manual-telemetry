@@ -1,7 +1,8 @@
-import { useSpanInitializer } from "honeycomb/useSpanInitializer";
+import { useCreateSpan } from "honeycomb/useCreateSpan";
 
 export const ExampleSpan = () => {
-  const { startSpan, setSpanFields } = useSpanInitializer("example", {
+  const { startSpan } = useCreateSpan({
+    name: "example",
     initialFields: { a_special_field: true },
   });
 

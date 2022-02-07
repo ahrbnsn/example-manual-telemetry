@@ -1,10 +1,10 @@
-import { useTraceContext } from "honeycomb/useTraceContext";
+import { useSpanContext } from "honeycomb/useSpanContext";
 
 export const SendEventButton = ({
   eventName = "button-clicked",
   name = "Send Event",
 }) => {
-  const { sendEvent } = useTraceContext();
+  const { sendEvent } = useSpanContext();
 
   return <button onClick={() => sendEvent({ name: eventName })}>{name}</button>;
 };
