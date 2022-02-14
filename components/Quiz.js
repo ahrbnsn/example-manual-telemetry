@@ -3,6 +3,7 @@ import { questions } from "data/questions";
 import { useCreateSpan } from "honeycomb/useCreateSpan";
 
 import Question from "./Question";
+import Survey from "./Survey";
 
 export function Quiz() {
   const [score, setScore] = useState(0);
@@ -26,12 +27,7 @@ export function Quiz() {
     return (
       <>
         Your score: {score}/{questions.length}
-        <p> next steps:</p>
-        <ul>
-          <li> try this</li>
-          <li> and try this</li>
-          <li> and maybe this</li>
-        </ul>
+        <Survey />
       </>
     );
   }
@@ -51,39 +47,14 @@ export function Quiz() {
 
   return (
     <>
-      <h1> Welcome to the quiz!</h1>
-      <p> Here is some introductory text.</p>
+      <h1>How much do you know about observablity?</h1>
       <p>
-        At Waterloo we were fortunate in catching a train for Leatherhead, where
-        we hired a trap at the station inn and drove for four or five miles
-        through the lovely Surrey lanes. It was a perfect day, with a bright sun
-        and a few fleecy clouds in the heavens. The trees and wayside hedges
-        were just throwing out their first green shoots, and the air was full of
-        the pleasant smell of the moist earth. To me at least there was a
-        strange contrast between the sweet promise of the spring and this
-        sinister quest upon which we were engaged. My companion sat in the front
-        of the trap, his arms folded, his hat pulled down over his eyes, and his
-        chin sunk upon his breast, buried in the deepest thought. Suddenly,
-        however, he started, tapped me on the shoulder, and pointed over the
-        meadows.
+        Take this 10-question quiz about observability to test your knowledge —
+        and see an example of the type of data that powers observability in
+        Honeycomb at the same time!
       </p>
 
-      <p>"Look there!" said he.</p>
-
-      <p>
-        A heavily timbered park stretched up in a gentle slope, thickening into
-        a grove at the highest point. From amid the branches there jutted out
-        the grey gables and high roof-tree of a very old mansion.
-      </p>
-
-      <p>"Stoke Moran?" said he.</p>
-
-      <p>
-        "Yes, sir, that be the house of Dr. Grimesby Roylott," remarked the
-        driver.
-      </p>
-
-      <button onClick={startQuiz}>Get started</button>
+      <button onClick={startQuiz}>Start the quiz</button>
     </>
   );
 }

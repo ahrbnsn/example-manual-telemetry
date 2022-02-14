@@ -178,6 +178,25 @@ button:hover {
   grid-template-columns: 1fr 1fr;
 }
 
+.surveySelection,
+textarea {
+  display: block;
+}
+
+textarea {
+  width: 100%;
+  margin-top: 8px;
+}
+
+.additionalFeedback {
+  display: block;
+  margin-top: 16px;
+}
+
+button[type="submit"] {
+  margin-top: 8px;
+}
+
 @keyframes fadein {
   0% {
     opacity: 0;

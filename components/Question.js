@@ -18,7 +18,6 @@ export function Question({ nextQuestion, question, increaseScore }) {
     name: "quiz-question",
     initialFields: {
       question: question.question,
-      options: question.answers.map((o) => o.name),
     },
     startSpanOnMount: true,
   });
@@ -30,7 +29,6 @@ export function Question({ nextQuestion, question, increaseScore }) {
      * we're using questions as a slightly contrived way to
      * generate spans — spans are an event that "span" a period of time,
      * and need a start time & a duration.
-     *
      *
      * When a question has been answered, we end the span and report
      * to honeycomb.

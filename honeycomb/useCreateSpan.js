@@ -122,7 +122,7 @@ export const useCreateSpan = ({
       traceId: traceIdRef.current,
       parentId: spanId.current,
       contextFields: {
-        ...extraContextFieldsFromParrent.current,
+        ...extraContextFieldsFromParent.current,
         ...fields,
       },
       payload,
