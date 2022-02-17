@@ -1,5 +1,7 @@
 import { useEffect } from "react";
 import { CUSTOM_EVENT } from "honeycomb/send";
+import annotations from "data/annotations";
+import Annotation from "./Annotation";
 
 export function EventWatcher({ events, setEvents }) {
   useEffect(() => {
@@ -21,6 +23,8 @@ export function EventWatcher({ events, setEvents }) {
           key={`${event.name}-${event.timestamp || event.startTime}`}
         >
           <pre className="eventPayload">{JSON.stringify(event, null, 2)}</pre>
+
+          <Annotation content={annotations[event.name]} />
         </section>
       ))}
     </div>

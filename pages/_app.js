@@ -11,10 +11,7 @@ import { SpanProvider } from "honeycomb/SpanProvider";
  *
  * https://nextjs.org/docs/advanced-features/measuring-performance */
 export function reportWebVitals(metric) {
-  send({
-    ...metric,
-    logger: "reportWebVitals",
-  });
+  send(metric);
 }
 
 function MyApp({ Component, pageProps }) {

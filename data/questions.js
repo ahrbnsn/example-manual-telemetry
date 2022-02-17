@@ -1,6 +1,7 @@
 export const questions = [
   {
     question: "Which of these the same abbreviation algorithm as o11y?",
+    slug: "o11y-abbreviation",
     answers: [
       {
         name: "i18n",
@@ -23,6 +24,7 @@ export const questions = [
   {
     question:
       "Which of these forms of telemetry can be used to derive all others?",
+    slug: "forms-of-telemetry",
     answers: [
       {
         name: "Metrics",
@@ -44,6 +46,7 @@ export const questions = [
   },
   {
     question: "Which of these is an example of a structured event?",
+    slug: "structured-event-example",
     format: "code",
     answers: [
       {
@@ -66,6 +69,7 @@ export const questions = [
   },
   {
     question: "What can a trace tell me about an application?",
+    slug: "story-a-trace-tells",
     orderedAnswers: true,
     answers: [
       {
@@ -88,6 +92,7 @@ export const questions = [
   },
   {
     question: "How are traces and spans related?",
+    slug: "trace-span-relationship",
     answers: [
       {
         name: "Traces are the children of spans",
@@ -109,6 +114,7 @@ export const questions = [
   },
   {
     question: "What’s an example of high cardinality data?",
+    slug: "high-cardinality-data",
     answers: [
       {
         name: "Feature flag status",
@@ -126,11 +132,12 @@ export const questions = [
     ],
     correctAnswer: "Order ID",
     explanation:
-      "Order ID is most likely to be high cardinality field of the choices above. Cardinality describes the number of distinct possible values, so a boolean field with two values like feature flag status or one with a few dozen values like AWS Zone is much lower cardinality than Order ID or User ID, where thousands of unique values are possible. Honeycomb is designed to efficiently store and analyze high cardinality data, so you can flexibly dive from broad categories down to a single request or user when identifying an issue. [Learn more about high cardinality](https://docs.honeycomb.io/getting-started/high-cardinality/).",
+      "Cardinality describes the number of distinct possible values, so a boolean field with two values like feature flag status or one with a few dozen values like AWS Zone is much lower cardinality than Order ID or User ID, where thousands of unique values are possible. Honeycomb is designed to efficiently store and analyze high cardinality data, so you can flexibly dive from broad categories down to a single request or user when identifying an issue. [Learn more about high cardinality](https://docs.honeycomb.io/getting-started/high-cardinality/).",
   },
   {
     question:
       "How granular can you get when analyzing high cardinality data with Honeycomb?",
+    slug: "granularity",
     orderedAnswers: true,
     answers: [
       {
@@ -152,7 +159,8 @@ export const questions = [
       "Structured events can accept fields with _any_ cardinality, which means you can drill down rapidly to any level in your data. This is a key aspect of observability. Trace an issue that affects a specific user back to an endpoint, then follow it back to see who else is affected and where, for example.",
   },
   {
-    question: "What is &ldquo;telemetry&rdquo;?",
+    question: "What is “telemetry”?",
+    slug: "what-is-telemetry",
     answers: [
       {
         name: "Telephone calls",
@@ -176,6 +184,7 @@ export const questions = [
   {
     question:
       "What’s the recommended way of keeping your telemetry data a reasonable size?",
+    slug: "solutions-for-less-data",
     answers: [
       {
         name: "Remove spans",
@@ -199,6 +208,7 @@ export const questions = [
   {
     question:
       "Which are the following is a way to explore data about your application in Honeycomb?",
+    slug: "explore-in-honeycomb",
     orderedAnswers: true,
     answers: [
       {

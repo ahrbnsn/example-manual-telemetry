@@ -28,7 +28,8 @@ export function Survey() {
 
   const updateSelected = (key) => {
     sendEvent({
-      eventName: `selected-${key}`,
+      action: `selected-${key}`,
+      name: "survey-selection",
       value: !selected[key],
     });
 

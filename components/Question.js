@@ -1,5 +1,5 @@
 import { useState } from "react";
-import ReactMarkdown from "react-markdown";
+import Markdown from "./EnhancedMarkdown";
 import cx from "classnames";
 import { useCreateSpan } from "honeycomb/useCreateSpan";
 
@@ -15,10 +15,11 @@ export function Question({ nextQuestion, question, increaseScore }) {
    * When the unit of work is complete, we call "endSpan" and send the
    * event to honeycomb */
   const { endSpan } = useCreateSpan({
-    name: "quiz-question",
+    name: question.slug,
     initialFields: {
       question: question.question,
     },
+    type: "quiz-question",
     startSpanOnMount: true,
   });
 
@@ -77,7 +78,7 @@ export function Question({ nextQuestion, question, increaseScore }) {
             </>
           )}
           <div className="explanation">
-            <ReactMarkdown>{question.explanation}</ReactMarkdown>
+            <Markdown>{question.explanation}</Markdown>
           </div>
           <button onClick={nextQuestion}>Next</button>
         </>
