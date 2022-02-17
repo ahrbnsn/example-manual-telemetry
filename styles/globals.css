@@ -197,6 +197,14 @@ button[type="submit"] {
   margin-top: 8px;
 }
 
+.signUpBanner {
+  background: #0066ba;
+  text-align: center;
+  padding: 5px 8px;
+
+  color: white;
+}
+
 @keyframes fadein {
   0% {
     opacity: 0;
@@ -205,3 +213,17 @@ button[type="submit"] {
     opacity: 1;
   }
 }
+
+body {
+  /* background: repeating-linear-gradient( */
+  /*     45deg, */
+  /*     transparent, */
+  /*     transparent 10px, */
+  /*     #ccc 10px, */
+  /*     #ccc 20px */
+  /*   ), */
+  /*   linear-gradient(to bottom, #eee, #999); */
+  background-image: linear-gradient(45deg, #262558, #51368d 10%, white 10% 100%),
+    linear-gradient(90deg, #262558, #51368d 10%);
+}
+/* background: linear-gradient(10deg, #262558, #51368d); */
