@@ -13,6 +13,8 @@ export function Survey() {
 
   const [selected, setSelected] = useState({});
   const [additionalFeedback, setFeedback] = useState("");
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
   const [submitted, setSubmitted] = useState(false);
 
   const handleSubmit = (event) => {
@@ -21,6 +23,8 @@ export function Survey() {
     endSpan({
       completedSurvey: true,
       additionalFeedback,
+      name,
+      email,
       ...selected,
     });
     setSubmitted(true);
@@ -96,6 +100,21 @@ export function Survey() {
           onChange={(event) => setFeedback(event.target.value)}
           value={additionalFeedback}
         />
+        <label htmlFor="email">Email</label>
+        <input
+          type="email"
+          name="email"
+          value={email}
+          onChange={(event) => setEmail(event.target.value)}
+        />
+        <label htmlFor="name"> Name</label>
+        <input
+          type="text"
+          name="name"
+          value={name}
+          onChange={(event) => setName(event.target.value)}
+        />
+
         <button type="submit">Submit</button>
       </form>
     </>

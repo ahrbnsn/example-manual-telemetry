@@ -16,7 +16,11 @@ export function EventWatcher({ events, setEvents }) {
 
   return (
     <div className="eventWatcher">
-      <h1> EVENTS!!!!</h1>
+      <h1> Events</h1>
+      <section>
+        {" "}
+        A sneak peak at the telemetry events generated as you take the quiz
+      </section>
       {events.map((event, i) => (
         <section
           className="event"
