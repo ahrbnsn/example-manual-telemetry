@@ -14,8 +14,8 @@ export const annotations = {
     `,
   },
   "story-a-trace-tells": {
-    text: `
-    This is a span event. It includes trace_id, timestamp, duration, and other additional fields that a developer wanted to track.
+    text: `    
+    This is a span event. It includes a trace_id, timestamp, duration, and other additional fields that a developer wanted to track.
     `,
   },
   "trace-span-relationship": {
