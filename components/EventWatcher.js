@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { CUSTOM_EVENT } from "honeycomb/send";
 import annotations from "data/annotations";
 import Annotation from "./Annotation";
+import Arrow from "./Arrow";
 
 export function EventWatcher({ events, setEvents, show }) {
   useEffect(() => {
@@ -18,10 +19,12 @@ export function EventWatcher({ events, setEvents, show }) {
     <div className="eventWatcher">
       <div>
         <header>
-          <h1> Events</h1>
+          <Arrow />
           <section>
-            {" "}
             A sneak peak at the telemetry events generated as you take the quiz
+            <div className="subhead">
+              (You can also watch them in the console logs)
+            </div>
           </section>
         </header>
         {events.map((event, i) => (
@@ -29,8 +32,8 @@ export function EventWatcher({ events, setEvents, show }) {
             className="event"
             key={`${event.name}-${event.timestamp || event.startTime}`}
           >
-            <Annotation content={annotations[event.name]} />
             <pre className="eventPayload">{JSON.stringify(event, null, 2)}</pre>
+            <Annotation content={annotations[event.name]} />
           </section>
         ))}
       </div>

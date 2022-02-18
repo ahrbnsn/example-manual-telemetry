@@ -29,7 +29,7 @@ select {
   white-space: pre-wrap;
   font-family: monospace;
   display: flex;
-  align-items: end;
+  align-items: flex-end;
   padding-right: 2rem;
 }
 
@@ -50,10 +50,11 @@ select {
   /* order: -1; */
 }
 .eventPayload {
-  border: 3px #d0d3d4 solid;
+  border: 2px #d0d3d4 dotted;
+  background: white;
   margin: 0;
   white-space: pre-wrap;
-  background: #fafafa;
+  /* background: #fafafa; */
   border-radius: 5px;
   padding: 0.75rem;
   font-size: 0.6rem;
@@ -78,11 +79,10 @@ body {
   left: 0;
   display: flex;
   align-items: center;
-  justify-content: end;
-  padding: 5px;
-  padding-top: 15px;
+  justify-content: center;
+  padding: 1rem;
   background: red;
-  clip-path: polygon(0% 100%, 40% 50%, 100% 0, 100% 100%);
+  /* clip-path: polygon(0% 100%, 40% 50%, 100% 0, 100% 100%); */
   height: 10vw;
 
   transition: 0.1s all ease-in;
@@ -366,23 +366,69 @@ button[type="submit"] {
 
 @media screen and (min-width: 880px) {
   body {
+    /*   ); */
     background: linear-gradient(
         30deg,
         #262558,
         #51368d 10%,
-        transparent 10% 100% /* #262558 90%, */ /* #51368d 100% */
+        transparent 10% 100%
       ),
-      linear-gradient(90deg, white 0 55%, #fafafa 55% 100%);
+      linear-gradient(10deg, transparent 0 95%, #262558 95%, #51368d 100%),
+      linear-gradient(90deg, white 0 60%, #fafafa 55% 100%);
     height: 100vh;
     background-attachment: fixed;
   }
 
   .eventWatcher header {
-    display: none;
+    white-space: pre-wrap;
+    font-family: monospace;
+    display: flex;
+    align-items: flex-end;
+    /* display: none; */
+    margin-left: -4rem;
+    padding-left: 1.75rem;
+    font-size: 1.5rem;
+    padding-bottom: 2.5rem;
+  }
+
+  .logoheader: {
+    max-height: 300px;
+    height: 300px;
+  }
+
+  .eventWatcher header svg {
+    height: 5em;
+    width: 2em;
+    margin-bottom: -3em;
+    margin-left: -0.5em;
+    flex-shrink: 0;
+    opacity: 0.3;
+    transition: all 0.3s ease-in;
+    transform: scale(-1, 1);
+    rotate: -17deg;
+  }
+
+  .eventWatcher .eventPayload {
+    transition: all 0.3s ease-in;
+    overflow-x: auto;
+  }
+
+  .eventWatcher:hover .eventPayload {
+    border-color: #7d8588;
+  }
+
+  .eventWatcher:hover header svg {
+    opacity: 0.7;
   }
 
   .quizHeader {
     text-align: left;
+  }
+
+  .subhead {
+    font-size: 0.8rem;
+    text-align: right;
+    font-weight: 300;
   }
 
   .choices,
@@ -391,6 +437,11 @@ button[type="submit"] {
     grid-gap: 0.7rem;
     grid-template-columns: 1fr 1fr;
     margin-top: 2.5rem;
+    margin-bottom: 2.5rem;
+  }
+
+  .explanation {
+    margin-bottom: 2.5rem;
   }
 
   .inspector {
@@ -404,14 +455,20 @@ button[type="submit"] {
     display: block;
   }
 
+  .signUpBanner {
+    padding: 16px;
+    position: absolute;
+    right: 0;
+    left: 0;
+  }
+
   /* body { */
   /*   overflow: hidden; */
   /* } */
   main {
     display: grid;
     grid-gap: 3vw;
-    grid-template-columns: 1.8fr 1.5fr;
-    min-height: 100vh;
+    grid-template-columns: 3fr 2fr;
   }
 
   .eventPayload {
@@ -423,14 +480,36 @@ button[type="submit"] {
     max-width: 650px;
     margin-left: auto;
     margin-right: auto;
+    min-height: 98vh;
+    padding-right: 1rem;
+    padding-left: 1rem;
+  }
+
+  main {
+    padding: 0;
+  }
+
+  .logoHeader {
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .logo {
+    margin: 0;
   }
 
   .eventWatcher div {
     position: sticky;
-    top: 250px;
+    top: 255px;
     max-width: 650px;
-    padding-left: 2rem;
+    padding-left: 3rem;
     margin: auto;
+    padding-right: 3rem;
+  }
+
+  .event: {
+    margin-top: 45px;
   }
 
   .event:nth-of-type(1) {

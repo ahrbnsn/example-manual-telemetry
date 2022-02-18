@@ -14,14 +14,16 @@ export default function Home({ children }) {
       <Banner />
       <main className={showEvents ? "showEvents" : "hideEvents"}>
         <section className="main-panel">
-          <img
-            src="logomark.svg"
-            alt="honeycomb.io"
-            srcSet="logomark.svg 200w,
+          <header className="logoHeader">
+            <img
+              src="logomark.svg"
+              alt="honeycomb.io"
+              srcSet="logomark.svg 200w,
           logo.svg"
-            sizes="(max-width: 500px) 200px"
-            className="logo"
-          />
+              sizes="(max-width: 500px) 200px"
+              className="logo"
+            />
+          </header>
           <Quiz />
         </section>
         <EventWatcher show={showEvents} events={events} setEvents={setEvents} />
