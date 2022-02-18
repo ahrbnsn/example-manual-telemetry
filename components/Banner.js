@@ -2,11 +2,11 @@ import Link from "./Link";
 
 export function Banner() {
   return (
-    <Link href="https://docs.honeycomb.io/getting-started/quickstart/">
-      <div className="signUpBanner">
+    <div className="signUpBanner">
+      <Link href="https://docs.honeycomb.io/getting-started/quickstart/">
         Create a free account to explore your data in Honeycomb
-      </div>
-    </Link>
+      </Link>
+    </div>
   );
 }
 

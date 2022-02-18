@@ -3,7 +3,7 @@ import { CUSTOM_EVENT } from "honeycomb/send";
 import annotations from "data/annotations";
 import Annotation from "./Annotation";
 
-export function EventWatcher({ events, setEvents }) {
+export function EventWatcher({ events, setEvents, show }) {
   useEffect(() => {
     const listener = ({ detail }) => {
       setEvents((prevEvents) => [detail, ...prevEvents]);
@@ -16,21 +16,24 @@ export function EventWatcher({ events, setEvents }) {
 
   return (
     <div className="eventWatcher">
-      <h1> Events</h1>
-      <section>
-        {" "}
-        A sneak peak at the telemetry events generated as you take the quiz
-      </section>
-      {events.map((event, i) => (
-        <section
-          className="event"
-          key={`${event.name}-${event.timestamp || event.startTime}`}
-        >
-          <pre className="eventPayload">{JSON.stringify(event, null, 2)}</pre>
-
-          <Annotation content={annotations[event.name]} />
-        </section>
-      ))}
+      <div>
+        <header>
+          <h1> Events</h1>
+          <section>
+            {" "}
+            A sneak peak at the telemetry events generated as you take the quiz
+          </section>
+        </header>
+        {events.map((event, i) => (
+          <section
+            className="event"
+            key={`${event.name}-${event.timestamp || event.startTime}`}
+          >
+            <Annotation content={annotations[event.name]} />
+            <pre className="eventPayload">{JSON.stringify(event, null, 2)}</pre>
+          </section>
+        ))}
+      </div>
     </div>
   );
 }

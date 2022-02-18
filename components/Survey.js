@@ -92,30 +92,34 @@ export function Survey() {
           Take me to a deeper dive into observability concepts
         </Checkbox>
 
-        <label className="additionalFeedback" htmlFor="additionalFeedback">
-          Anything else you&rsquo;d like to share?
-        </label>
-        <textarea
-          name="additionalFeedback"
-          onChange={(event) => setFeedback(event.target.value)}
-          value={additionalFeedback}
-        />
-        <label htmlFor="email">Email</label>
-        <input
-          type="email"
-          name="email"
-          value={email}
-          onChange={(event) => setEmail(event.target.value)}
-        />
-        <label htmlFor="name"> Name</label>
-        <input
-          type="text"
-          name="name"
-          value={name}
-          onChange={(event) => setName(event.target.value)}
-        />
+        <div className="feedbackSection">
+          <label className="additionalFeedback" htmlFor="additionalFeedback">
+            Anything else you&rsquo;d like to share?
+          </label>
+          <textarea
+            name="additionalFeedback"
+            onChange={(event) => setFeedback(event.target.value)}
+            value={additionalFeedback}
+          />
+          <label htmlFor="email">Email</label>
+          <input
+            type="email"
+            name="email"
+            value={email}
+            onChange={(event) => setEmail(event.target.value)}
+          />
+          <label htmlFor="name"> Name</label>
+          <input
+            type="text"
+            name="name"
+            value={name}
+            onChange={(event) => setName(event.target.value)}
+          />
+        </div>
 
-        <button type="submit">Submit</button>
+        <button className="actionButton" type="submit">
+          Submit
+        </button>
       </form>
     </>
   );

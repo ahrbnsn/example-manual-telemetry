@@ -47,7 +47,7 @@ export function Question({ nextQuestion, question, increaseScore }) {
 
   return (
     <>
-      <h1>{question.question}</h1>
+      <h1 className="quizHeader">{question.question}</h1>
       <section className={answered ? "choices-answered" : "choices"}>
         {question.answers.map((choice) => (
           <button
@@ -70,17 +70,16 @@ export function Question({ nextQuestion, question, increaseScore }) {
           {correctGuess ? (
             <p>You got it!</p>
           ) : (
-            <>
-              <p>
-                <b>You picked:</b> {answered}
-              </p>
+            <p>
               <b>Correct Answer:</b> {question.correctAnswer}
-            </>
+            </p>
           )}
           <div className="explanation">
             <Markdown>{question.explanation}</Markdown>
           </div>
-          <button onClick={nextQuestion}>Next</button>
+          <button className="actionButton" onClick={nextQuestion}>
+            Next
+          </button>
         </>
       )}
     </>

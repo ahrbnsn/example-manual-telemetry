@@ -47,14 +47,16 @@ export function Quiz() {
 
   return (
     <>
-      <h1>How much do you know about observablity?</h1>
+      <h1 className="quizHeader">How much do you know about observablity?</h1>
       <p>
         Take this 10-question quiz about observability to test your knowledge —
         and see an example of the type of data that powers observability in
         Honeycomb at the same time!
       </p>
 
-      <button onClick={startQuiz}>Start the quiz</button>
+      <button className="actionButton" onClick={startQuiz}>
+        Start the quiz
+      </button>
     </>
   );
 }

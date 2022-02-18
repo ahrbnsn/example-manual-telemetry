@@ -1,4 +1,5 @@
 import Markdown from "./EnhancedMarkdown";
+import Arrow from "./Arrow";
 
 export function Annotation({ content = {} }) {
   if (!content.text) {
@@ -10,6 +11,7 @@ export function Annotation({ content = {} }) {
   return (
     <aside className="eventAnnotation">
       <Markdown>{content.text}</Markdown>
+      <Arrow />
     </aside>
   );
 }

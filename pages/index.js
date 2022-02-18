@@ -3,22 +3,34 @@ import { useState } from "react";
 import EventWatcher from "components/EventWatcher";
 import Quiz from "components/Quiz";
 import Banner from "components/Banner";
+import XRay from "components/XRay";
 
 export default function Home({ children }) {
   const [events, setEvents] = useState([]);
-  const [showEventWatcher, setShowEvents] = useState(true);
+  const [showEvents, setShowEvents] = useState(false);
 
+  const toggleEvents = () => setShowEvents(!showEvents);
   return (
     <>
       <Banner />
-      <main className={showEventWatcher ? "two-column" : "single-column"}>
+      <main className={showEvents ? "showEvents" : "hideEvents"}>
         <section className="main-panel">
+          <img
+            src="logomark.svg"
+            alt="honeycomb.io"
+            srcset="logomark.svg 200w,
+          logo.svg"
+            sizes="(max-width: 500px) 200px"
+            className="logo"
+          />
           <Quiz />
         </section>
-        {showEventWatcher && (
-          <EventWatcher events={events} setEvents={setEvents} />
-        )}
+        <EventWatcher show={showEvents} events={events} setEvents={setEvents} />
       </main>
+
+      <div class="inspector" onClick={toggleEvents}>
+        {showEvents ? "Back to quiz" : "Inspect event stream"}
+      </div>
     </>
   );
 }

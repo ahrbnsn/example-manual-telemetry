@@ -4,8 +4,7 @@ export const annotations = {
   },
 
   "forms-of-telemetry": {
-    text: `
-    This event represents a span.
+    text: `This event represents a span.
     `,
   },
 
