@@ -14,12 +14,12 @@ export function Arrow() {
         height="90.19951477503378"
         fill="none"
       ></rect>
-      <g stroke-linecap="round">
+      <g strokeLinecap="round">
         <g transform="translate(35.654202627565155 115.10669369363495) rotate(160.38776987242468 -12.889765790250522 -72.15277531266622)">
           <path
             d="M-12.98 -38.01 C-15.68 -39.82, -30.62 -39.05, -28.03 -50.09 C-25.44 -61.13, -2.46 -95.21, 2.53 -104.25 M-11.15 -39.01 C-13.55 -40.51, -28.18 -37.28, -25.94 -48.49 C-23.71 -59.71, -2.46 -97.21, 2.25 -106.3"
             stroke="currentColor"
-            stroke-width="2"
+            strokeWidth="2"
             fill="none"
           ></path>
         </g>
@@ -27,7 +27,7 @@ export function Arrow() {
           <path
             d="M-1.95 -78.6 C-0.15 -85.12, 2.07 -96.24, 3.03 -105.27 M-1.96 -76.1 C-0.96 -88.14, 1.76 -98.82, 1.29 -106.26"
             stroke="currentColor"
-            stroke-width="2"
+            strokeWidth="2"
             fill="none"
           ></path>
         </g>
@@ -35,7 +35,7 @@ export function Arrow() {
           <path
             d="M-20.02 -88.33 C-12.18 -91.45, -3.83 -99.27, 3.03 -105.27 M-20.03 -85.83 C-12.04 -94.05, -2.4 -101.01, 1.29 -106.26"
             stroke="currentColor"
-            stroke-width="2"
+            strokeWidth="2"
             fill="none"
           ></path>
         </g>

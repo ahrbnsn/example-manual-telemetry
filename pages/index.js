@@ -3,7 +3,6 @@ import { useState } from "react";
 import EventWatcher from "components/EventWatcher";
 import Quiz from "components/Quiz";
 import Banner from "components/Banner";
-import XRay from "components/XRay";
 
 export default function Home({ children }) {
   const [events, setEvents] = useState([]);
@@ -18,7 +17,7 @@ export default function Home({ children }) {
           <img
             src="logomark.svg"
             alt="honeycomb.io"
-            srcset="logomark.svg 200w,
+            srcSet="logomark.svg 200w,
           logo.svg"
             sizes="(max-width: 500px) 200px"
             className="logo"
@@ -28,7 +27,7 @@ export default function Home({ children }) {
         <EventWatcher show={showEvents} events={events} setEvents={setEvents} />
       </main>
 
-      <div class="inspector" onClick={toggleEvents}>
+      <div className="inspector" onClick={toggleEvents}>
         {showEvents ? "Back to quiz" : "Inspect event stream"}
       </div>
     </>
