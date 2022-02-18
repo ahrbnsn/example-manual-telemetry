@@ -80,7 +80,7 @@ export const sendSpanEventToHoneycomb = ({
   send({
     timestamp: Date.now(),
     "trace.trace_id": traceId,
-    "trace.span_id": parentId,
+    "trace.parent_id": parentId,
     "meta.annotation_type": "span_event",
     name,
     ...contextFields,

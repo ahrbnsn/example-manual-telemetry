@@ -24,8 +24,6 @@ select {
 .eventAnnotation {
   white-space: pre-wrap;
   font-family: monospace;
-  display: flex;
-  align-items: end;
   padding-right: 2rem;
 }
 
@@ -339,12 +337,12 @@ button[type="submit"] {
 @media screen and (min-width: 880px) {
   body {
     background: linear-gradient(
-        30deg,
+        15deg,
         #262558,
         #51368d 10%,
         transparent 10% 100%
       ),
-      linear-gradient(10deg, transparent 0 95%, #262558 95%, #51368d 100%),
+      linear-gradient(15deg, transparent 0 95%, #262558 95%, #51368d 100%),
       linear-gradient(90deg, white 0 60%, #fafafa 55% 100%);
     height: 100vh;
     background-attachment: fixed;
@@ -354,7 +352,7 @@ button[type="submit"] {
     white-space: pre-wrap;
     font-family: monospace;
     display: flex;
-    align-items: end;
+    align-items: flex-end;
     margin-left: -4rem;
     padding-left: 1.75rem;
     font-size: 1.5rem;
@@ -374,8 +372,8 @@ button[type="submit"] {
     flex-shrink: 0;
     opacity: 0.3;
     transition: all 0.3s ease-in;
-    transform: scale(-1, 1);
-    rotate: -17deg;
+
+    transform: rotate(-17deg) scale(-1, 1);
   }
 
   .eventWatcher .eventPayload {
@@ -450,6 +448,7 @@ button[type="submit"] {
     min-height: 98vh;
     padding-right: 1rem;
     padding-left: 1rem;
+    min-width: 300px;
   }
 
   main {
