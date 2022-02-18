@@ -14,7 +14,7 @@ export const annotations = {
     `,
   },
   "story-a-trace-tells": {
-    text: `    
+    text: `
     This is a span event. It includes a trace_id, timestamp, duration, and other additional fields that a developer wanted to track.
     `,
   },
@@ -25,7 +25,7 @@ export const annotations = {
 
   "high-cardinality-data": {
     text: `
-    \`PickedRight\` is a low-cardinality field that can be used to calculate scores on this quiz question, or this entire quiz. This event could include \`user_id\`, a high-cardinality field.
+    \`correctAnswer\` is a low-cardinality field that can be used to calculate scores on this quiz question, or this entire quiz. This event could include \`user_id\`, a high-cardinality field.
     `,
   },
 
