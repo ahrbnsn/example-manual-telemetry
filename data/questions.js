@@ -1,6 +1,6 @@
 export const questions = [
   {
-    question: "Which of these the same abbreviation algorithm as o11y?",
+    question: "Which of these use the same abbreviation algorithm as o11y?",
     slug: "o11y-abbreviation",
     answers: [
       {
