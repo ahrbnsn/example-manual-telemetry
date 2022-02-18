@@ -22,9 +22,6 @@ select {
   font: inherit;
 }
 
-.event {
-  animation: fadein 1.5s;
-}
 .event:not(:first-of-type) {
   margin-top: 1.5rem;
 }
@@ -292,6 +289,16 @@ button:hover {
   }
 }
 
+@keyframes fadeout {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+
 /* background: linear-gradient(10deg, #262558, #51368d); */
 
 .surveySelection {
@@ -365,7 +372,7 @@ button[type="submit"] {
         #51368d 10%,
         transparent 10% 100% /* #262558 90%, */ /* #51368d 100% */
       ),
-      linear-gradient(90deg, white 0 70%, #fafafa 50% 100%);
+      linear-gradient(90deg, white 0 55%, #fafafa 55% 100%);
     height: 100vh;
     background-attachment: fixed;
   }
@@ -397,9 +404,9 @@ button[type="submit"] {
     display: block;
   }
 
-  body {
-    overflow: hidden;
-  }
+  /* body { */
+  /*   overflow: hidden; */
+  /* } */
   main {
     display: grid;
     grid-gap: 3vw;
@@ -418,18 +425,39 @@ button[type="submit"] {
     margin-right: auto;
   }
 
-  .eventWatcher {
-    overflow-y: scroll;
-
-    background: #fafafa;
-    padding: 2rem;
-    scrollbar-width: none;
-    scrollbar-gutter: unset;
+  .eventWatcher div {
+    position: sticky;
+    top: 250px;
+    max-width: 650px;
+    padding-left: 2rem;
+    margin: auto;
   }
 
-  .eventWatcher div {
-    max-width: 650px;
-    margin-left: auto;
-    margin-right: auto;
+  .event:nth-of-type(1) {
+    animation: fadein 2s;
+    display: block;
+  }
+
+  .event:nth-of-type(2) {
+    animation: fadeout 2s;
+    display: block;
+  }
+
+  /* .event.event:nth-of-type(1) .eventAnnotation { */
+  /*   animation: fadein 1.5s; */
+  /* } */
+  .event + .event {
+    /* display: none; */
+    /* opacity: 0; */
+    /* animation: fadeout 1.5s; */
+    opacity: 0.5;
+  }
+
+  .event:hover {
+    opacity: 1;
+  }
+
+  .event:not(:nth-of-type(1)) {
+    display: none;
   }
 }

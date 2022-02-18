@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Markdown from "./EnhancedMarkdown";
 import cx from "classnames";
+import confetti from "canvas-confetti";
 import { useCreateSpan } from "honeycomb/useCreateSpan";
 
 export function Question({ nextQuestion, question, increaseScore }) {
@@ -42,6 +43,10 @@ export function Question({ nextQuestion, question, increaseScore }) {
 
     if (choice.correct) {
       increaseScore();
+
+      confetti({
+        origin: { x: Math.random(), y: 1.1 },
+      });
     }
   };
 
