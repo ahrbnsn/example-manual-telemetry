@@ -38,7 +38,7 @@ export function Question({ nextQuestion, question, increaseScore }) {
      * learn more:
      * https://www.honeycomb.io/blog/observability-driven-development/
      */
-    endSpan({ picked: choice.name, pickedRight: !!choice.correct });
+    endSpan({ answer: choice.name, correctAnswer: !!choice.correct });
     setAnswered(choice.name);
 
     if (choice.correct) {
