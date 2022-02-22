@@ -47,15 +47,15 @@ export function Quiz() {
 
   return (
     <>
-      <h1 className="quizHeader">How much do you know about observablity?</h1>
+      <h1 className="quizHeader">Trivia: What do you know about observability?</h1>
       <p>
-        Take this 10-question quiz about observability to test your knowledge —
-        and see an example of the type of data that powers observability in
-        Honeycomb at the same time!
+       Observability's fast-growing popularity in recent years has made it a watchword among developers working on complex, distributed systems. But what is it -- and is it only useful for DevOps?
       </p>
-
+      <p>
+      This 10-question quiz tests your knowledge -- and shows you core concepts from a frontend perspective at the same time. 
+      </p>
       <button className="actionButton" onClick={startQuiz}>
-        Start the quiz
+        Show me the first question
       </button>
     </>
   );
