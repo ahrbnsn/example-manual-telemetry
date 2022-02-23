@@ -19,7 +19,7 @@ export const questions = [
     ],
     correctAnswer: "i18n",
     explanation:
-      "O11y stands for observability, where “11” is the number of letters between the start and end of the word! Internationalization has 18 letters between the start and the end the word, so it is abbreviated as “i18n.” This style of abbreviation is called a [numeronym](https://en.wikipedia.org/wiki/Numeronym#:~:text=A%20numeronym%20is%20a%20number,%22%20%2B%20%22nine%22).",
+      "O11y stands for observability, where “11” is the number of letters between the start and end of the word. This style of abbreviation is called a [numeronym](https://en.wikipedia.org/wiki/Numeronym#:~:text=A%20numeronym%20is%20a%20number,%22%20%2B%20%22nine%22)!",
   },
   {
     question:
@@ -42,10 +42,10 @@ export const questions = [
     ],
     correctAnswer: "Events",
     explanation:
-      "Events. Events (specifically, structured events) are the building blocks of observability; they’re the place where you put in any information you want, such as build ID, username, service name. These events can be used to queried over as events themselves or can be chained together to make traces, you can record counts to make up metrics, you can include error message that would be returned to the user or be displayed in logs.",
+      "Logs, traces, and metrics are all events, and events are the building blocks of observability. You can stuff all types of information into events, such as web vitals, system metrics, logs, and application data.",
   },
   {
-    question: "Which of these is an example of a structured event?",
+    question: "Which of the following is a structured event?",
     slug: "structured-event-example",
     format: "code",
     answers: [
@@ -65,7 +65,7 @@ export const questions = [
     ],
     correctAnswer: '{ "user_id": 123, "build_id": "abc" }',
     explanation:
-      "A structured event is a JSON blob that captures information about a specific unit of work in the code. It contains a set of labeled fields, and the values for that field. This structure makes them easy to query and join. Traces are composed from structured events. [Read more about structured events.](https://docs.honeycomb.io/getting-started/events-metrics-logs/)",
+      "A structured event is a JSON blob that captures information about a specific unit of work in the code. It contains a set of labeled fields, and the values for that field. This structure makes them easy to query and join. Traces are composed from structured events. [Read more about structured events](https://docs.honeycomb.io/getting-started/events-metrics-logs/).",
   },
   {
     question: "What can a trace tell me about an application?",
@@ -88,7 +88,7 @@ export const questions = [
     ],
     correctAnswer: "All of the above",
     explanation:
-      "A trace is the flow of data through an application, whether it’s a user’s interactions on a webpage, or a user making a request, hitting a database, and then returning the request to the browser. In a single view, it can tell you how long each step took, the order of the route, and any other details you add to your traces.",
+      "A trace captures the flow of data through any application, including a user’s interactions on a webpage, the request flow, hitting a database, how long each step took, and any other details you add.",
   },
   {
     question: "How are traces and spans related?",
@@ -110,7 +110,7 @@ export const questions = [
     ],
     correctAnswer: "A trace is made up of many spans",
     explanation:
-      "A span is an event emitted by a single piece of instrumentation from a single location in the code. A trace is collection of spans that are tied together by a shared Trace ID. [Learn more.](https://docs.honeycomb.io/getting-data-in/tracing/#what-is-a-trace)",
+      "A span is an event emitted by a single piece of instrumentation from a single location in the code. A trace is collection of spans that are tied together by a shared Trace ID. [Learn more](https://docs.honeycomb.io/getting-data-in/tracing/#what-is-a-trace).",
   },
   {
     question: "What’s an example of high cardinality data?",
@@ -132,7 +132,7 @@ export const questions = [
     ],
     correctAnswer: "Order ID",
     explanation:
-      "Cardinality describes the number of distinct possible values, so a boolean field with two values like feature flag status or one with a few dozen values like AWS Zone is much lower cardinality than Order ID or User ID, where thousands of unique values are possible. Honeycomb is designed to efficiently store and analyze high cardinality data, so you can flexibly dive from broad categories down to a single request or user when identifying an issue. [Learn more about high cardinality](https://docs.honeycomb.io/getting-started/high-cardinality/).",
+      "Cardinality describes the number of distinct possible values that something can have. Feature flag status only has two possible values (true, and false); Order ID has an arbitrary number of unique values. Structured events accept fields of high and low cardinality, so you can query at any level. [Learn more](https://docs.honeycomb.io/getting-started/high-cardinality/).",
   },
   {
     question:
@@ -178,7 +178,7 @@ export const questions = [
     ],
     correctAnswer: "Data emitted about what happens inside a system",
     explanation:
-      "Telemetry can be webpage clicks, request duration, calls to a database —  anything you want to know about your system. OpenTelemetry is a CNCF open standard designed for the creation and management of telemetry data such as traces, metrics and logs. [Learn more](https://docs.honeycomb.io/getting-data-in/opentelemetry/).",
+      "Telemetry can be webpage clicks, request duration, calls to a database — anything you want to know about your system. OpenTelemetry is a CNCF open standard designed for the creation and management of telemetry data such as traces, metrics and logs. [Learn more](https://docs.honeycomb.io/getting-data-in/opentelemetry/).",
   },
 
   {
@@ -202,7 +202,7 @@ export const questions = [
     ],
     correctAnswer: "Sample at the trace level",
     explanation:
-      "Sampling is the practice of selecting a few elements to represent the whole as a way to handle scale. This allows you to use a subset of data to learn about a high-volume production system in a mathematically sound way. [Learn more](https://docs.honeycomb.io/manage-data-volume/sampling/).",
+      "Sampling is the practice of selecting a few elements to represent the whole. This allows you to use a subset of data about a high-volume system in a mathematically sound way. [Learn more](https://docs.honeycomb.io/manage-data-volume/sampling/)."
   },
 
   {
@@ -227,6 +227,5 @@ export const questions = [
     ],
     correctAnswer: "All of the above",
     explanation:
-      "Honeycomb allows you explore your data by querying on any dimension, aggregating your events to compute a count or a P95 (95th percentile), or visualize them as a heatmap. You can group and filter them on any dimension. This ability allows you to track down the behavior of a single user, code release, feature flag, server, or endpoint.",
-  },
+      "Honeycomb allows you explore your data by querying on any dimension, aggregating your events, visualizing them in charts, and applying statistical analysis.",
 ];
