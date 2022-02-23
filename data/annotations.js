@@ -14,12 +14,12 @@ export const annotations = {
   },
   "story-a-trace-tells": {
     text: `
-    This span event includes a trace_id, timestamp, duration, and other additional fields that a developer wanted to track.
+    This span includes a trace_id, timestamp, duration, and other additional fields that a developer may want to track.
     `,
   },
   "trace-span-relationship": {
     text: `
-    When spans are stitched into a trace by their trace_id, they tell a story about an application’s workflow: what’s slow, where there are errors, what services are involved. `,
+    When spans are stitched into a trace by their trace_id, they tell a story about an application’s workflow. `,
   },
 
   "high-cardinality-data": {
