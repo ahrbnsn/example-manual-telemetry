@@ -49,10 +49,10 @@ export function Quiz() {
     <>
       <h1 className="quizHeader">Trivia: What do you know about observability?</h1>
       <p>
-       Observability's fast-growing popularity in recent years has made it a watchword among developers working on complex, distributed systems. But what is it -- and is it only useful for DevOps?
+       Observability's fast-growing popularity in recent years has made it a watchword among developers working on complex, distributed systems. But what is it?
       </p>
       <p>
-      This 10-question quiz tests your knowledge -- and shows you core concepts from a frontend perspective at the same time. 
+      This 10-question quiz tests your knowledge -- and shows you how you can use it to observe the frontend using the same things you'd send to an analytics provider.
       </p>
       <button className="actionButton" onClick={startQuiz}>
         Show me the first question
