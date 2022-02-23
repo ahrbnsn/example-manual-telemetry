@@ -1,37 +1,36 @@
 export const annotations = {
   "o11y-abbreviation": {
-    text: `This is a live event stream that’s emitted from your interactions with this quiz app.`,
+    text: `This is a live event that’s emitted from your interactions with this quiz app.`,
   },
 
   "forms-of-telemetry": {
     text: `This event represents a span.
     `,
   },
-
   "structured-event-example": {
     text: `
-    This is a structured event, comprised of fields and values
+    This is a structured event, comprised of fields and values.
     `,
   },
   "story-a-trace-tells": {
     text: `
-    This is a span event. It includes a trace_id, timestamp, duration, and other additional fields that a developer wanted to track.
+    This span event includes a trace_id, timestamp, duration, and other additional fields that a developer wanted to track.
     `,
   },
   "trace-span-relationship": {
     text: `
-    Span events have a span_id, trace_id, and parent_id. When tied together into a trace, spans tell a story about an application’s workflow: what’s slow, where there are errors, what services are involved. `,
+    When spans are stitched into a trace by their trace_id, they tell a story about an application’s workflow: what’s slow, where there are errors, what services are involved. `,
   },
 
   "high-cardinality-data": {
     text: `
-    \`correctAnswer\` is a low-cardinality field that can be used to calculate scores on this quiz question, or this entire quiz. This event could include \`user_id\`, a high-cardinality field.
+    \`correctAnswer\` is a low-cardinality field that can be used to calculate scores on this quiz question. You can also imagine this event to include \`user_id\`, a high-cardinality field.
     `,
   },
 
   granularity: {
     text: `
-    High cardinality data in events like this allow you to dive deep into your system using attributes that are important to your business.
+    High cardinality data in events query your system using any attributes that are important to your business.
     `,
   },
   "what-is-telemetry": {
