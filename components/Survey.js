@@ -27,6 +27,21 @@ export function Survey() {
       email,
       ...selected,
     });
+
+    const data = new FormData(event.target);
+
+    fetch("https://formspree.io/f/mrgjqlae", {
+      method: "POST",
+      body: data,
+      headers: {
+        Accept: "application/json",
+      },
+    }).catch((error) =>
+      sendEvent({
+        name: "survey-error",
+        message: error.message,
+      })
+    );
     setSubmitted(true);
   };
 

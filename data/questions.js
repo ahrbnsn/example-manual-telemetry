@@ -202,7 +202,7 @@ export const questions = [
     ],
     correctAnswer: "Sample at the trace level",
     explanation:
-      "Sampling is the practice of selecting a few elements to represent the whole. This allows you to use a subset of data about a high-volume system in a mathematically sound way. [Learn more](https://docs.honeycomb.io/manage-data-volume/sampling/)."
+      "Sampling is the practice of selecting a few elements to represent the whole. This allows you to use a subset of data about a high-volume system in a mathematically sound way. [Learn more](https://docs.honeycomb.io/manage-data-volume/sampling/).",
   },
 
   {
@@ -228,4 +228,5 @@ export const questions = [
     correctAnswer: "All of the above",
     explanation:
       "Honeycomb allows you explore your data by querying on any dimension, aggregating your events, visualizing them in charts, and applying statistical analysis.",
+  },
 ];

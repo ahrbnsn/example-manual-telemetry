@@ -4,7 +4,7 @@ export function Checkbox({ id, updateValue, values, children }) {
       <input
         type="checkbox"
         id={id}
-        name="interests"
+        name={id}
         checked={!!values[id]}
         onClick={() => updateValue(id)}
       />
